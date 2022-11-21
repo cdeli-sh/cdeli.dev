@@ -59,7 +59,10 @@ export default function Home() {
                 ? "max-h-[calc(100vh-2rem-40px)] rounded-b-lg"
                 : "max-h-[calc(100vh-40px)]")
             }
-            onScroll={(e) => setOffset(e.target.scrollTop)}
+            onScroll={(e) => {
+              // @ts-ignore
+              setOffset(e.target.scrollTop);
+            }}
           >
             <div className="h-[200vh]">
               <div className="flex md:flex-row flex-col md:space-x-4 md:space-y-0 space-y-4 px-4 pt-4 group">
