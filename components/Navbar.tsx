@@ -14,10 +14,11 @@ export default function Navbar({ offset }: props) {
     >
       <span>{"> "}cdeli.dev</span>
       <div className="md:flex space-x-4 hidden">
-        <Link href={"#"}>Accueil</Link>
+        <Link href={"#top"}>Accueil</Link>
         <Link href={"#projects"}>Projets</Link>
-        <Link href={"#"}>Expérience</Link>
-        <Link href={"#"}>Contact</Link>
+        <Link href={"#experiences"}>Expérience</Link>
+        <Link href={"#etudes"}>Etudes</Link>
+        {/* <Link href={"#"}>Contact</Link> */}
       </div>
       <button className="md:hidden">
         <svg

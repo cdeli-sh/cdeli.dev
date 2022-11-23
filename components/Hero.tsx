@@ -3,7 +3,10 @@ import ReactTypingEffect from "react-typing-effect";
 
 export default function Hero() {
   return (
-    <div className="flex md:flex-row flex-col md:space-x-4 md:space-y-0 space-y-4 px-4 pt-4 group">
+    <div
+      id="top"
+      className="flex md:flex-row flex-col md:space-x-4 md:space-y-0 space-y-4 px-4 pt-4 group"
+    >
       <div className="flex flex-col justify-between md:w-3/5 w-full md:h-72 bg-purple-800/50 text-white rounded-lg transition-all duration-200 p-4">
         <div>
           <div className="font-mono text-2xl">
@@ -62,7 +65,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <div className="md:w-2/5 w-full h-72 bg-blue-400/50 rounded-lg md:hover:w-3/4 transition-all duration-200 bg-center bg-cover bg-[url('/zach-wear-PNeM21iaAhc-unsplash.jpg')]"></div>
+      <div className="md:w-2/5 w-full h-72 bg-blue-400/50 rounded-lg md:hover:w-3/4 transition-all duration-200 bg-center bg-cover bg-[url('/markus-spiske-cvBBO4PzWPg-unsplash.jpg')]"></div>
     </div>
   );
 }

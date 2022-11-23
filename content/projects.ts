@@ -1,6 +1,6 @@
 let projects = [
     {
-        name: "molecul.fr",
+        name: "molecul.fr (WIP)",
         url: "https://molecul.fr/",
         color: "rgba(147,51,234,0.8)",
         techno: {
@@ -8,8 +8,7 @@ let projects = [
             color: "blue-500"
         },
         pictures: [
-            '/upe-mobile.png',
-            '/upe-desktop.png',
+
         ]
     },
     {
@@ -27,14 +26,14 @@ let projects = [
     },
     {
         name: "Application Métier (Eurovia)",
-        url: "https://next.upe05.com/",
+        url: "#",
         color: "rgba(239,68,68,0.8)",
         techno: {
             name: "ElectronJS",
             color: "blue-500"
         },
         pictures: [
-
+            '/eurovia.png',
         ]
     },
     {
@@ -64,7 +63,7 @@ let projects = [
     },
     {
         name: "Portes ouvertes UCO Niort (2021)",
-        url: "#_",
+        url: "#",
         color: "#f78c2d",
         techno: {
             name: "Laravel + Livewire",

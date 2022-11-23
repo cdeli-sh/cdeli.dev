@@ -30,7 +30,7 @@ export default function ReactiveContainer({ children }: props) {
             setOffset(e.target.scrollTop);
           }}
         >
-          <div className="h-[200vh]">{children}</div>
+          <div className="">{children}</div>
         </div>
       </div>
     </main>
