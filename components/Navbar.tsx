@@ -1,10 +1,31 @@
 import Link from "next/link";
+import { useState } from "react";
 
 type props = {
   offset: number;
+  openMenu: (state: boolean) => void;
 };
 
-export default function Navbar({ offset }: props) {
+const menu = [
+  {
+    name: "Accueil",
+    href: "#top",
+  },
+  {
+    name: "Projets",
+    href: "#projects",
+  },
+  {
+    name: "Expérience",
+    href: "#experiences",
+  },
+  {
+    name: "Etudes",
+    href: "#etudes",
+  },
+];
+
+export default function Navbar({ offset, openMenu }: props) {
   return (
     <nav
       className={
@@ -14,13 +35,13 @@ export default function Navbar({ offset }: props) {
     >
       <span>{"> "}cdeli.dev</span>
       <div className="md:flex space-x-4 hidden">
-        <Link href={"#top"}>Accueil</Link>
-        <Link href={"#projects"}>Projets</Link>
-        <Link href={"#experiences"}>Expérience</Link>
-        <Link href={"#etudes"}>Etudes</Link>
-        {/* <Link href={"#"}>Contact</Link> */}
+        {menu.map((item, i) => (
+          <Link href={item.href} key={i}>
+            {item.name}
+          </Link>
+        ))}
       </div>
-      <button className="md:hidden">
+      <button className="md:hidden" onClick={() => openMenu(true)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -37,5 +58,48 @@ export default function Navbar({ offset }: props) {
         </svg>
       </button>
     </nav>
+  );
+}
+
+type BurgerProps = {
+  state: boolean;
+  setState: (state: boolean) => void;
+};
+
+export function Burger({ state, setState }: BurgerProps) {
+  return (
+    <div
+      className={
+        "top-0 w-screen bg-slate-800 z-[99] flex flex-col items-center text-white text-2xl space-y-2 " +
+        state
+          ? "h-screen fixed"
+          : "h-0 hidden"
+      }
+      onClick={() => setState(false)}
+    >
+      <div className="h-[40px] w-full flex justify-end items-center text-white px-2">
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      {menu.map((item, i) => (
+        <Link href={item.href} key={i}>
+          {item.name}
+        </Link>
+      ))}
+    </div>
   );
 }

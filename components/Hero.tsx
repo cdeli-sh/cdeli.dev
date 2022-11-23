@@ -63,6 +63,12 @@ export default function Hero() {
           >
             Besoin d{"'"}un site ?
           </Link>
+          <Link
+            className="block bg-slate-900 text-white px-4 py-2 rounded-lg w-max"
+            href="https://github.com/cdeli-sh/cdeli.dev/"
+          >
+            <img src="/gh.png" alt="Github" className="h-6" />
+          </Link>
         </div>
       </div>
       <div className="md:w-2/5 w-full h-72 bg-blue-400/50 rounded-lg md:hover:w-3/4 transition-all duration-200 bg-center bg-cover bg-[url('/markus-spiske-cvBBO4PzWPg-unsplash.jpg')]"></div>

@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbar, { Burger } from "../components/Navbar";
 import { useEffect, useState } from "react";
 
 type props = {
@@ -7,16 +7,19 @@ type props = {
 
 export default function ReactiveContainer({ children }: props) {
   const [offset, setOffset] = useState(0);
+  const [burger, setBurger] = useState(false);
 
   return (
     <main className="font-mono h-screen bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1597226290016-764e1f4767dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')] ">
+      <Burger state={burger} setState={setBurger} />
+
       <div
         className={
           "transition-all duration-200 flex flex-col overflow-hidden " +
           (offset > 40 ? "rounded-lg p-4" : "")
         }
       >
-        <Navbar offset={offset} />
+        <Navbar offset={offset} openMenu={setBurger} />
 
         <div
           className={

@@ -11,12 +11,12 @@ export default function Projects() {
           className="w-full flex flex-col justify-between md:h-72 bg-[rgb(248,244,233)]/80 rounded-lg transition-all duration-200 p-4 group overflow-hidden relative"
           style={{ backgroundColor: project.color }}
         >
-          <div className="flex h-3/4 items-center justify-center space-x-4">
+          <div className="flex mb-16 items-center justify-center md:flex-row flex-col md:space-x-4 space-y-4 md:space-y-0 md:h-48">
             {project.pictures.map((img, j) => (
               <img
                 key={j}
                 src={"/projets" + img}
-                className="object-contain object-center rounded-lg h-full"
+                className="object-contain object-center rounded-lg h-min max-h-[50vh] md:max-h-full"
                 alt=""
               />
             ))}
@@ -46,7 +46,7 @@ type LinkToProjectProps = {
 function LinkToProject({ children, href }: LinkToProjectProps) {
   if (href == "#") {
     return (
-      <div className="h-[calc(25%-1rem)] absolute w-[calc(100%-1rem)] bottom-0 left-0 bg-slate-800/25 group-hover:bg-slate-800 text-center p-4 m-2 rounded-lg text-white transition-all duration-200">
+      <div className="h-16 absolute w-[calc(100%-1rem)] bottom-0 left-0 bg-slate-800/25 group-hover:bg-slate-800 text-center p-4 m-2 rounded-lg text-white transition-all duration-200">
         {children}
       </div>
     );
@@ -55,7 +55,7 @@ function LinkToProject({ children, href }: LinkToProjectProps) {
     <Link
       href={href}
       target="_blank"
-      className="h-[calc(25%-1rem)] absolute w-[calc(100%-1rem)] bottom-0 left-0 bg-slate-800/25 group-hover:bg-slate-800 text-center p-4 m-2 rounded-lg text-white transition-all duration-200"
+      className="h-16 absolute w-[calc(100%-1rem)] bottom-0 left-0 bg-slate-800/25 group-hover:bg-slate-800 text-center p-4 m-2 rounded-lg text-white transition-all duration-200"
     >
       {children}
     </Link>
