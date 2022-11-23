@@ -67,39 +67,36 @@ type BurgerProps = {
 };
 
 export function Burger({ state, setState }: BurgerProps) {
-  return (
-    <div
-      className={
-        "top-0 w-screen bg-slate-800 z-[99] flex flex-col items-center text-white text-2xl space-y-2 " +
-        state
-          ? "h-screen fixed"
-          : "h-0 hidden"
-      }
-      onClick={() => setState(false)}
-    >
-      <div className="h-[40px] w-full flex justify-end items-center text-white px-2">
-        <button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
+  if (state) {
+    return (
+      <div
+        className="fixed top-0 h-screen w-screen bg-slate-800 z-[99] flex flex-col items-center text-white text-2xl space-y-2"
+        onClick={() => setState(false)}
+      >
+        <div className="h-[40px] w-full flex justify-end items-center text-white px-2">
+          <button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        {menu.map((item, i) => (
+          <Link href={item.href} key={i}>
+            {item.name}
+          </Link>
+        ))}
       </div>
-      {menu.map((item, i) => (
-        <Link href={item.href} key={i}>
-          {item.name}
-        </Link>
-      ))}
-    </div>
-  );
+    );
+  }
 }
